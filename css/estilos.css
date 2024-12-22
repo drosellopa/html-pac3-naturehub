@@ -51,8 +51,12 @@ main {
     background-color: var(--beige);
     
 }
-.main-container {
+/* Casi todos los main tienen el mismo padding, excepto el main del index que lo tiene su main-container */
+.main, .main-index .main-container {
     padding: 1rem;
+}
+.main-container {
+   
     max-width: 1140px;
     margin: auto;
 }
@@ -71,12 +75,12 @@ p {
     line-height: 1.5rem;
 }
 /* Enlaces dentro del texto */
-p > a {
+p  a {
     color: var(--negro);
     text-decoration: none;
     border-bottom: 1px dotted var(--negro);
 }
-p > a:hover {
+p  a:hover {
     border-bottom: 1px solid;
 }
 /* Creditos de las imágenes */
@@ -164,7 +168,9 @@ div.legal li {
 }
 
 /* ************************************* */
+/* ************************************* */
 /*               INDEX.HTML              */
+/* ************************************* */
 /* ************************************* */
 .main-container > section {
     padding: 2rem 0;
@@ -242,6 +248,77 @@ input {
 .article-title > a{
     color: black;
     text-decoration: none;
+}
+
+/* ************************************* */
+/* ************************************* */
+/*         TEMA-DEL-MES.HTML             */
+/* ************************************* */
+/* ************************************* */
+
+/* ********************************* */
+/*      TEMA DEL MES  BANNER         */
+/* ********************************* */
+#tema-banner {
+    text-align: center;
+}
+#tema-banner > h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+span.mes {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    background-color: var(--verde);
+    color: var(--blanco);
+    padding: .2rem 1rem;
+}
+#tema-banner > h2{
+    font-size: 2rem;
+}
+
+/* ********************************* */
+/*      TEMA DEL MES  ASIDE          */
+/* ********************************* */
+aside.menu-lateral > ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: .3rem;
+}
+aside.menu-lateral a {
+    text-decoration: none;
+    color: var(--negro);
+    font-weight: 700;
+    font-size: .8rem;
+
+}
+aside.menu-lateral a:hover {
+    color: var(--verde);
+} 
+/* ********************************* */
+/*         ESPECIES LISTADO          */
+/* ********************************* */
+.especie-card {
+    margin-bottom: 3rem;
+}
+.num {
+    font-size: 3rem;
+    font-weight: 700;
+}
+.especie-card h3 {
+    font-size: 2rem;
+}
+.especie-card figure {
+    margin: 1rem 0;
+}
+.especie-card img {
+    width: 100%;
+    border: 1rem solid var(--blanco);
+}
+.info {
+    margin-top: 1rem;
 }
 
 
