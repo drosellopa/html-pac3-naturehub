@@ -476,16 +476,17 @@ aside.menu-lateral a:hover {
     /*No he usado grid porque creo que en este caso es más sencillo maquetar con flex*/
     .tema-del-mes .main-container {
         display: flex;
-        align-items: baseline;
+        /* align-items: baseline; */
         gap: 1rem;
         max-width: initial;
-        padding: 1rem;
+        /* padding: 1rem; */
     }
 
     /* ********************************* */
     /*   TEMA DEL MES  ASIDE  DESKTOP    */
     /* ********************************* */
     .menu-lateral {
+        padding: .5rem 0;
         flex: 0 0 150px;
     }
     aside.menu-lateral > ul{
@@ -500,6 +501,9 @@ aside.menu-lateral a:hover {
     /* ********************************* */
     /*   ESPECIES LISTADO DESKTOP        */
     /* ********************************* */
+    #especies-listado {
+        padding: initial;
+    }
     .especie-card {
         margin-bottom: 3rem;
         display: flex;
