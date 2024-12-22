@@ -1,5 +1,7 @@
 /*Mobile first: Empezamos con el código para el móvil. Usremos "media queries" para la TABLET y el DESKTOP. Todo el CSS estará en este documento. Solo haré una query por cada dispositivo, en total 2 */
 
+
+/* ESTILOS GLOBALES */
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 * {
     margin: 0;
@@ -16,11 +18,12 @@
     --blanco: rgb(255,255,255);
     --verde: rgb(64, 195, 130);
     --beige: rgb(242, 242, 230);
-    --beige-modificado: rgba(242, 242, 230, 0.7);
-    
+    --beige-modificado: rgba(242, 242, 230, 0.7);   
 }
 
-/*Estilos generales*/
+/* ************************************* */
+/*          ESTILOS GENERALES            */
+/* ************************************* */
 /*Estilos generales a toda la clase .boton*/
 .boton {
     color: var(--negro);
@@ -39,8 +42,8 @@ a.boton {
 /*Estilos concretos para los botones de tipo input*/
 input.boton {
     background-color: transparent;
+    cursor: pointer;
 }
-
 body {
     font-family: "Alegreya Sans", serif;    
 }
@@ -53,13 +56,45 @@ main {
     max-width: 1140px;
     margin: auto;
 }
+
+section > header {
+    /* Parece que todos los headers de las secciones tienen un margen inferior de unos 2rem, de momento lo pongo como general */
+    margin-bottom: 2rem;
+}
+section  h2 {
+    margin-bottom: 2rem;
+    /* Los títulos h2 de las secciones parece que tienen un tamaño de 2rem */
+}
+
 /* Todo el texto tiene un line-height */
 p {
     line-height: 1.5rem;
 }
+/* Enlaces dentro del texto */
+p > a {
+    color: var(--negro);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--negro);
+}
+p > a:hover {
+    border-bottom: 1px solid;
+}
+/* Creditos de las imágenes */
+
+div.credito > p{
+    color: var(--negro);
+    background-color: var(--beige-modificado);
+    padding: .5rem;
+    font-size: .8rem;
+    position: absolute; 
+    bottom: 1rem;
+    right: 1rem;
+}
+
+
 
 /* ********************************* */
-/*               HEADER              */
+/*           MAIN HEADER             */
 /* ********************************* */
 .main-header {
     text-align: center;
@@ -73,6 +108,7 @@ img.logo {
 /* ********************************* */
 nav.menu li{
     margin-bottom: 10px;
+    list-style: none;
 }
 nav.menu a{
     color: var(--negro);
@@ -83,76 +119,6 @@ nav.menu a{
 nav.menu a:hover {
     color: var(--verde);
 }
-/* ************************************* */
-/*               INDEX.HTML              */
-/* ************************************* */
-
-/* ********************************* */
-/*               BANNER              */
-/* ********************************* */
-section#banner {    
-    background-image: url(../img/hero-image-home.jpg);
-    background-position: center;
-    background-size: cover;
-    color: var(--blanco);
-    text-align: center;
-    padding: 160px 1rem;
-    position: relative; /* Para que el absolute de los créditos tome referencia de este contenedor */
-}
-
-div.banner-content > h1 {
-    font-size: 3rem;
-    margin-bottom: 3rem;
-}
-div.banner-content > p {
-    font-size: 2rem;
-}
-div.banner-credit {
-    text-align: right;
-}
-div.banner-credit > p{
-    color: var(--negro);
-    background-color: var(--beige-modificado);
-    padding: .5rem;
-    font-size: .8rem;
-    position: absolute; /**/
-    bottom: 1rem;
-    right: 1rem;
-}
-div.banner-credit a {
-    color: var(--beige-modificado);
-    text-decoration: none;
-    color: var(--negro);
-    border-bottom: 1px dotted var(--negro);
-    
-}
-div.banner-credit a:hover {
-    border-bottom: 1px solid;
-}
-
-/* ********************************* */
-/*               ABOUT              */
-/* ********************************* */
-
-/*Formulario*/
-.form-group > input{
-    /* En el móvil parece que ocupan el 100%*/
-    display: block;
-    width: 100%;
-    border: 0;
-    padding: .5rem;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 /* ********************************* */
 /*               FOOTER              */
@@ -169,7 +135,7 @@ footer.main-footer img.logo-n{
     margin-bottom: 1rem;
     
 }
-P.credenciales {
+p.nombre {
     margin-bottom: 1rem;
 }
 footer.main-footer a {
@@ -197,6 +163,87 @@ div.legal li {
     list-style: none;
 }
 
+/* ************************************* */
+/*               INDEX.HTML              */
+/* ************************************* */
+.main-container > section {
+    padding: 2rem 0;
+}
+/* ********************************* */
+/*          INDEX BANNER             */
+/* ********************************* */
+section#banner {    
+    background-image: url(../img/hero-image-home.jpg);
+    background-position: center;
+    background-size: cover;
+    color: var(--blanco);
+    text-align: center;
+    padding: 160px 1rem;
+    position: relative; /* Para que el absolute de los créditos tome referencia de este contenedor */
+}
+
+div.banner-content > h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+div.banner-content > p {
+    font-size: 2rem;
+    line-height: 2.1rem;
+    
+}
+
+
+
+/* ********************************* */
+/*          INDEX QUÉS-ES            */
+/* ********************************* */
+
+.que-es-content p:not(p:last-of-type){
+    margin-bottom: 1rem;
+}
+
+/*Formulario*/
+form {
+    padding: 1rem 0;
+}
+input {
+    margin: .5rem 0;
+}
+
+.form-group > input{
+    /* En el móvil parece que ocupan el 100%*/
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: .5rem;
+    border-radius: 0;
+    outline: 0;
+    
+}
+
+.form-group > input:focus {
+    border: 1px solid black;
+}
+
+/* ********************************* */
+/*         INDEX HISTORIAS           */
+/* ********************************* */
+.historias-article-container > *{
+    background-color: var(--blanco);
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;   
+
+}
+/*Ataco a todos los elementos dentro de los artículos menos al último para ponerles margen inferior. */
+#historias article > *:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.article-title > a{
+    color: black;
+    text-decoration: none;
+}
+
 
 
 /* *********************************************** */
@@ -204,16 +251,45 @@ div.legal li {
 /* *********************************************** */
 
 @media (min-width: 768px){
+/* ************************************ */
+/*             INDEX TABLET             */
+/* ************************************ */
+
     /* ********************************* */
-    /*        BANNER  TABLET             */
+    /*       INDEX BANNER  TABLET        */
     /* ********************************* */
     div.banner-content > h1 {
-        font-size: 4.5rem;
+        font-size: 4rem;
        
     }
     div.banner-content > p {
-        font-size: 3.2rem;
+        font-size: 3rem;
     }
+    /* ********************************* */
+    /*         QUE-ES TABLET             */
+    /* ********************************* */
+    .que-es-form input{
+        max-width: 500px;
+    }
+    /* ********************************* */
+    /*     INDEX HISTORIAS  TABLET       */
+    /* ********************************* */
+    .historias-article-container {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+    }
+    /* Atacamos a los hijos de contenedor flex*/
+    .historias-article-container > * {
+        /*En el contexto de los artículos colocados en horizontal, no tiene sentido el margin-bottom*/
+        margin-bottom: initial;
+
+        /* Para que en el salto de tablet, ya se posicionen los artículos uno al lado del otro, he puesto un ancho base de 14 pixel calculando 768 / 3 son 16rem menos los 2 gap de 1.5 rem (16-3) dan 13rem*/
+        /* El primer 1 se refiere al factor de crecimiento (flex-grow), el segundo al de decrecimiento (flex-shrink), uso el short-hand flex con 1 1 en este caso para que el artículo se agrande y encoja si cabe*/
+        flex: 1 1 13rem;
+    }
+
     
 }
 
@@ -221,26 +297,46 @@ div.legal li {
 /*                  QUERY DESKTOP                  */
 /* *********************************************** */
 @media (min-width: 1024px){
+/* ************************************ */
+/*          GENERAL DESKTOP             */
+/* ************************************ */
+    .main-container {
+        /* Aumento del padding superior e inferior de contendor main*/
+        padding: 2.5rem 1rem;
+    }
+    section h2 {
+        font-size: 2rem;
+        /* Aumento tamaño de títulos de las secciones en desktop porque me parece que aumenta un poco, aunque no estoy seguro.*/
+    }
+
     /* ********************************* */
     /*        HEADER DESKTOP              */
     /* ********************************* */
-    .main-header {
-        display: flex;
-        justify-content: space-between;
-        padding: 2rem;
+    img.logo {
+        margin-bottom: initial;
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    
+    nav.menu li{
+        margin-bottom: initial;
+    }
+    .main-header {
+        display: flex;
+        text-align: initial;
+        justify-content: space-between;
+        align-items: center;
+        
+        padding: 1.5rem 2rem;
+    }
+    nav.menu > ul {
+        display: flex;
+        gap: .5rem;
+    }
+    nav.menu li:not(li:last-of-type)::after {
+        content: "|";
+        margin-left: .5rem;
+        
+    }
 
     /* ********************************* */
     /*         FOOTER DESKTOP            */
@@ -262,6 +358,32 @@ div.legal li {
         margin-left: .5rem;
         /* Separo el after lo mismo que el gap del flex para que quede centrado*/
     }
+
+
+/* ************************************ */
+/*             INDEX DESKTOP            */
+/* ************************************ */
+    /* ********************************* */
+    /*         QUE-ES DESKTOP            */
+    /* ********************************* */
+    .que-es-container {
+        display: flex;
+        gap: 3rem;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .que-es-container > .que-es-content {
+        
+        flex: 1 1 60%;
+    }
+
+    .que-es-container > .que-es-form {
+        flex: 1 1 40%;
+    }
+    
+
+
 }
 
 
