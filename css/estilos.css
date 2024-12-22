@@ -367,6 +367,16 @@ aside.menu-lateral a:hover {
         flex: 1 1 13rem;
     }
 
+    /* ************************************ */
+    /*        TEMA-DEL-MES TABLET           */
+    /* ************************************ */
+    span.mes {
+        display: initial;
+        width: initial;
+        margin: initial;
+        
+    }
+
     
 }
 
@@ -423,7 +433,7 @@ aside.menu-lateral a:hover {
         display: flex;
         justify-content: space-between;       
     }
-    nav.footer {
+    .footer-links {
         text-align: right;
     }
     div.legal > ul {
@@ -458,7 +468,75 @@ aside.menu-lateral a:hover {
     .que-es-container > .que-es-form {
         flex: 1 1 40%;
     }
+
+/* ************************************ */
+/*        TEMA-DEL-MES DESKTOP          */
+/* ************************************ */
+
+    /*No he usado grid porque creo que en este caso es más sencillo maquetar con flex*/
+    .tema-del-mes .main-container {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        max-width: initial;
+        padding: 1rem;
+    }
+
+    /* ********************************* */
+    /*   TEMA DEL MES  ASIDE  DESKTOP    */
+    /* ********************************* */
+    .menu-lateral {
+        flex: 0 0 150px;
+    }
+    aside.menu-lateral > ul{
+        /*Anulamos el flex*/
+        display: initial;
+
+    }
+    aside.menu-lateral a {        
+        font-size: 1rem;
+    }
+   
+    /* ********************************* */
+    /*   ESPECIES LISTADO DESKTOP        */
+    /* ********************************* */
+    .especie-card {
+        margin-bottom: 3rem;
+        display: flex;
+        gap: 1.5rem;
+        
+        
+    }
     
+    .especie-card > header {
+        flex: 1 1 28%;
+    }
+    .especie-card > figure {
+        margin: initial;
+        flex: 1 1 32%;
+    }
+
+    .especie-card > .especie-texto {
+        flex: 1 1 40%;
+    }
+
+
+    .num {
+        font-size: 2.5rem;
+        
+    }
+    .especie-card h3 {
+        font-size: 1.3rem;
+    }
+   
+    .especie-card img {
+        width: 100%;
+        border: .8rem solid var(--blanco);
+    }
+    .info {
+        margin-top: 1rem;
+    }
+
 
 
 }
