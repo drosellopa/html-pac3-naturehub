@@ -1,0 +1,270 @@
+/*Mobile first: Empezamos con el código para el móvil. Usremos "media queries" para la TABLET y el DESKTOP. Todo el CSS estará en este documento. Solo haré una query por cada dispositivo, en total 2 */
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/*Variables*/
+:root {
+    --negro: rgb(0,0,0);
+    --blanco: rgb(255,255,255);
+    --verde: rgb(64, 195, 130);
+    --beige: rgb(242, 242, 230);
+    --beige-modificado: rgba(242, 242, 230, 0.7);
+    
+}
+
+/*Estilos generales*/
+/*Estilos generales a toda la clase .boton*/
+.boton {
+    color: var(--negro);
+    border: 1px solid var(--negro);
+    display: block;
+    width: max-content !important; /* Se ajusta a su contenido aún siendo un bloque */
+    padding: .3rem 1rem;    
+}
+.boton:hover{
+    border: 1px solid var(--verde);
+}
+/*Estilos concretos para los botones de tipo a*/
+a.boton {
+    text-decoration: none;
+}
+/*Estilos concretos para los botones de tipo input*/
+input.boton {
+    background-color: transparent;
+}
+
+body {
+    font-family: "Alegreya Sans", serif;    
+}
+main {
+    background-color: var(--beige);
+    
+}
+.main-container {
+    padding: 1rem;
+    max-width: 1140px;
+    margin: auto;
+}
+/* Todo el texto tiene un line-height */
+p {
+    line-height: 1.5rem;
+}
+
+/* ********************************* */
+/*               HEADER              */
+/* ********************************* */
+.main-header {
+    text-align: center;
+    padding: 2rem .5rem;
+}
+img.logo {
+    margin-bottom: 1rem;
+}
+/* ********************************* */
+/*                 MENÚ              */
+/* ********************************* */
+nav.menu li{
+    margin-bottom: 10px;
+}
+nav.menu a{
+    color: var(--negro);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+nav.menu a:hover {
+    color: var(--verde);
+}
+/* ************************************* */
+/*               INDEX.HTML              */
+/* ************************************* */
+
+/* ********************************* */
+/*               BANNER              */
+/* ********************************* */
+section#banner {    
+    background-image: url(../img/hero-image-home.jpg);
+    background-position: center;
+    background-size: cover;
+    color: var(--blanco);
+    text-align: center;
+    padding: 160px 1rem;
+    position: relative; /* Para que el absolute de los créditos tome referencia de este contenedor */
+}
+
+div.banner-content > h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+div.banner-content > p {
+    font-size: 2rem;
+}
+div.banner-credit {
+    text-align: right;
+}
+div.banner-credit > p{
+    color: var(--negro);
+    background-color: var(--beige-modificado);
+    padding: .5rem;
+    font-size: .8rem;
+    position: absolute; /**/
+    bottom: 1rem;
+    right: 1rem;
+}
+div.banner-credit a {
+    color: var(--beige-modificado);
+    text-decoration: none;
+    color: var(--negro);
+    border-bottom: 1px dotted var(--negro);
+    
+}
+div.banner-credit a:hover {
+    border-bottom: 1px solid;
+}
+
+/* ********************************* */
+/*               ABOUT              */
+/* ********************************* */
+
+/*Formulario*/
+.form-group > input{
+    /* En el móvil parece que ocupan el 100%*/
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ********************************* */
+/*               FOOTER              */
+/* ********************************* */
+footer.main-footer {
+    background-color: var(--negro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem;
+}
+
+footer.main-footer img.logo-n{
+    width: 150px;
+    margin-bottom: 1rem;
+    
+}
+P.credenciales {
+    margin-bottom: 1rem;
+}
+footer.main-footer a {
+    
+    color: inherit; /* Lo hereda de su ancestro que tenga color. En este caso el footer con color blanco.*/
+    text-decoration: none;
+}
+footer.main-footer a:hover {
+    color: var(--verde);
+}
+div.social {
+    margin-bottom: 1rem;
+}
+
+div.social > a:not(a:last-of-type) {
+    /*Se pone margen derecho a todos los enlaces menos al último enlace social*/
+    margin-right: .5rem;
+}
+div.social > a:hover {
+    opacity: .7;
+    color: var(--blanco);   
+}
+div.legal li {
+    margin-bottom: .5rem;
+    list-style: none;
+}
+
+
+
+/* *********************************************** */
+/*                  QUERY TABLET                   */
+/* *********************************************** */
+
+@media (min-width: 768px){
+    /* ********************************* */
+    /*        BANNER  TABLET             */
+    /* ********************************* */
+    div.banner-content > h1 {
+        font-size: 4.5rem;
+       
+    }
+    div.banner-content > p {
+        font-size: 3.2rem;
+    }
+    
+}
+
+/* *********************************************** */
+/*                  QUERY DESKTOP                  */
+/* *********************************************** */
+@media (min-width: 1024px){
+    /* ********************************* */
+    /*        HEADER DESKTOP              */
+    /* ********************************* */
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ********************************* */
+    /*         FOOTER DESKTOP            */
+    /* ********************************* */
+    footer.main-footer {
+        text-align: initial; 
+        display: flex;
+        justify-content: space-between;       
+    }
+    nav.footer {
+        text-align: right;
+    }
+    div.legal > ul {
+        display: flex;
+        gap: .5rem;
+    }
+    div.legal li:not(li:last-of-type)::after {
+        content: "|";
+        margin-left: .5rem;
+        /* Separo el after lo mismo que el gap del flex para que quede centrado*/
+    }
+}
+
+
+
+
+
