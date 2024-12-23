@@ -84,8 +84,15 @@ p  a:hover {
     border-bottom: 1px solid;
 }
 /* Creditos de las imágenes */
+figure.credito {
+    position: relative;
+    
+}
 
-div.credito > p{
+
+
+/* Configuramos también los figure que tienen crédito */
+div.credito > p, figure.credito > figcaption{
     color: var(--negro);
     background-color: var(--beige-modificado);
     padding: .5rem;
@@ -257,12 +264,12 @@ input {
 /* ************************************* */
 
 /* ********************************* */
-/*      TEMA DEL MES  BANNER         */
+/*      TEMA DEL MES  TÍTULO         */
 /* ********************************* */
-#tema-banner {
+#tema-titulo {
     text-align: center;
 }
-#tema-banner > h1 {
+#tema-titulo > h1 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
 }
@@ -274,7 +281,7 @@ span.mes {
     color: var(--blanco);
     padding: .2rem 1rem;
 }
-#tema-banner > h2{
+#tema-titulo > h2{
     font-size: 2rem;
 }
 
@@ -321,6 +328,63 @@ aside.menu-lateral a:hover {
     margin-top: 1rem;
 }
 
+/* ************************************* */
+/* ************************************* */
+/*               BLOG.HTML              */
+/* ************************************* */
+/* ************************************* */
+
+#blog-titulo {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.blog-card {
+    margin-bottom: 2rem;
+}
+.blog-card-header h2 {
+    margin-bottom: 1rem;
+}
+.blog-card-header a {
+    text-decoration: none;
+    color: var(--negro);
+}
+
+.blog-card img {
+    width: 100%;
+    /*Elimino los 4 px que dejan debajo de la imagen los navegadores en imágenes inline */
+    vertical-align: bottom;
+}
+.blog-content {
+    padding: 1rem;
+    background-color: var(--blanco);
+}
+.blog-card-footer {
+    margin-top: 1rem;
+}
+.blog-card-footer p {
+    margin-bottom: 2.5rem;
+}
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    padding: 3rem 0;
+    
+}
+.paginacion > li {
+    border: 1px solid var(--negro);
+    padding: .2rem .5rem;
+    list-style: none;
+    cursor: pointer;
+
+}
+li.actual-pag, ul.paginacion > li:hover {
+    background-color: var(--verde);
+    color: var(--blanco); 
+    border: 1px solid var(--verde);
+    
+}
 
 
 /* *********************************************** */
@@ -376,6 +440,37 @@ aside.menu-lateral a:hover {
         margin: initial;
         
     }
+
+    /* ************************************ */
+    /*          BLOG TABLET                 */
+    /* ************************************ */
+
+    /* Se puede hacer con flex, pero así uso grid*/
+    .blog-article-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-gap: 2rem;
+    }
+    
+    .blog-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: initial; /*Anulamos el margin-bottom*/       
+        
+        
+    }
+    
+    .blog-content {
+        flex-grow: 1; /* El contenido crece hasta ocupar todo el espacio*/
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-between;  /*Pegamos el botón abajo y header arriba */
+    }
+    
+    
+  
+
 
     
 }
@@ -539,6 +634,21 @@ aside.menu-lateral a:hover {
     }
     .info {
         margin-top: 1rem;
+    }
+
+     /* ************************************ */
+    /*          BLOG DESKTOP                 */
+    /* ************************************ */
+    h1#blog-titulo {
+        margin-bottom: initial;
+        font-size: 2.5rem;
+    }
+    /* Se puede hacer con flex, pero así uso grid*/
+    .blog-article-container {
+        display: grid;
+        /* Uso la función de CSS repeta para que repita 3 veces 1fr*/
+        grid-template-columns: repeat(3, 1fr); 
+      
     }
 
 
