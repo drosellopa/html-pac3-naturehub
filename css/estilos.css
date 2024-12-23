@@ -29,7 +29,7 @@
     color: var(--negro);
     border: 1px solid var(--negro);
     display: block;
-    width: max-content !important; /* Se ajusta a su contenido aún siendo un bloque */
+    width: max-content; /* Se ajusta a su contenido aún siendo un bloque */
     padding: .3rem 1rem;    
 }
 .boton:hover{
@@ -386,6 +386,120 @@ li.actual-pag, ul.paginacion > li:hover {
     
 }
 
+/* ************************************* */
+/* ************************************* */
+/*               POST.HTML              */
+/* ************************************* */
+/* ************************************* */
+
+/*Elimino el padding de esta página para ponérselo solo al .main-container*/    
+main.main.post {
+    padding: initial; 
+}
+.post .main-container {
+    padding: 1rem;
+}
+.post section {
+    padding: 1rem 0;
+}
+
+.post section h2 {
+    margin-bottom: 1rem;
+}
+
+/* ********************************* */
+/*      Header -Breadcrum            */
+/* ********************************* */
+
+
+
+ul.breadcrum {
+    display: flex;
+    list-style: none;
+}
+ul.breadcrum > li:not(li:last-of-type):after {
+    content: ">";
+    margin: 0 .5rem;
+
+}
+
+ul.breadcrum a{
+    color: var(--negro);
+    text-decoration: none;
+}
+ul.breadcrum a:hover{
+    color: var(--verde);
+    text-decoration: none;
+}
+
+.main.post h1 {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+.autor-post {
+    font-size: 1.1rem;
+}
+
+/* ********************************* */
+/*           Post-banner             */
+/* ********************************* */
+
+#post-banner {
+    background-image: url(../img/post-fast-fashion.jpg);
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    
+}
+/* ********************************* */
+/*           Post-intro             */
+/* ********************************* */
+.intro-post {
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+/* ********************************* */
+/*        Post-impacto social        */
+/* ********************************* */
+#impacto-social figure {
+    margin: 1rem auto;
+    width: fit-content;
+}
+
+#impacto-social iframe {
+    max-width: 100%;
+    
+}
+/* ********************************* */
+/*        Post-qué puedes hacer      */
+/* ********************************* */
+#que-puedes-hacer li {
+    margin: .5rem 0 .5rem 2rem ;
+    
+}
+
+/* ********************************* */
+/*        Post-aside      */
+/* ********************************* */
+#post-aside {
+    border-top: 1px solid var(--negro);
+    padding: 3rem 1rem;
+}
+#post-aside  h2 {
+     margin-bottom: 2rem;
+}
+.post-article-container  h2 > a {
+    color: var(--negro);
+    text-decoration: none;
+    font-size: 1.1rem;
+    
+}
+
+
 
 /* *********************************************** */
 /*                  QUERY TABLET                   */
@@ -467,6 +581,16 @@ li.actual-pag, ul.paginacion > li:hover {
         flex-direction: column; 
         justify-content: space-between;  /*Pegamos el botón abajo y header arriba */
     }
+
+     /* ************************************ */
+    /*         POST TABLET                 */
+    /* ************************************ */
+    .post-article-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-gap: 2rem;
+    }
+
     
     
   
@@ -484,7 +608,7 @@ li.actual-pag, ul.paginacion > li:hover {
 /* ************************************ */
     .main-container {
         /* Aumento del padding superior e inferior de contendor main*/
-        padding: 2.5rem 1rem;
+        padding: 1rem;
     }
     section h2 {
         font-size: 2rem;
@@ -639,6 +763,11 @@ li.actual-pag, ul.paginacion > li:hover {
      /* ************************************ */
     /*          BLOG DESKTOP                 */
     /* ************************************ */
+    .blog .main-container {
+        max-width: initial;
+        /* Este contenedor no tiene máx-width */
+    }
+    
     h1#blog-titulo {
         margin-bottom: initial;
         font-size: 2.5rem;
@@ -649,6 +778,14 @@ li.actual-pag, ul.paginacion > li:hover {
         /* Uso la función de CSS repeta para que repita 3 veces 1fr*/
         grid-template-columns: repeat(3, 1fr); 
       
+    }
+
+    /* ************************************ */
+    /*         POST DESKTOP                */
+    /* ************************************ */
+    .post-article-container {        
+        grid-template-columns: repeat(4, 1fr); 
+        grid-gap: 2rem;
     }
 
 
