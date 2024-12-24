@@ -330,7 +330,7 @@ aside.menu-lateral a:hover {
 
 /* ************************************* */
 /* ************************************* */
-/*               BLOG.HTML              */
+/*               BLOG.HTML               */
 /* ************************************* */
 /* ************************************* */
 
@@ -338,6 +338,10 @@ aside.menu-lateral a:hover {
     text-align: center;
     margin-bottom: 3rem;
 }
+/* ********************************* */
+/*            BLOG CARD              */
+/* ********************************* */
+
 
 .blog-card {
     margin-bottom: 2rem;
@@ -365,6 +369,11 @@ aside.menu-lateral a:hover {
 .blog-card-footer p {
     margin-bottom: 2.5rem;
 }
+
+/* ********************************* */
+/*         BLOG PAGINACIÓN           */
+/* ********************************* */
+
 .paginacion {
     display: flex;
     justify-content: center;
@@ -388,7 +397,7 @@ li.actual-pag, ul.paginacion > li:hover {
 
 /* ************************************* */
 /* ************************************* */
-/*               POST.HTML              */
+/*               POST.HTML               */
 /* ************************************* */
 /* ************************************* */
 
@@ -408,7 +417,7 @@ main.main.post {
 }
 
 /* ********************************* */
-/*      Header -Breadcrum            */
+/*      POST Header -Breadcrum       */
 /* ********************************* */
 
 
@@ -483,7 +492,7 @@ ul.breadcrum a:hover{
 }
 
 /* ********************************* */
-/*        Post-aside      */
+/*            Post-aside             */
 /* ********************************* */
 #post-aside {
     border-top: 1px solid var(--negro);
@@ -582,8 +591,8 @@ ul.breadcrum a:hover{
         justify-content: space-between;  /*Pegamos el botón abajo y header arriba */
     }
 
-     /* ************************************ */
-    /*         POST TABLET                 */
+    /* ************************************ */
+    /*          POST TABLET                 */
     /* ************************************ */
     .post-article-container {
         display: grid;
@@ -760,8 +769,8 @@ ul.breadcrum a:hover{
         margin-top: 1rem;
     }
 
-     /* ************************************ */
-    /*          BLOG DESKTOP                 */
+    /* ************************************ */
+    /*          BLOG DESKTOP                */
     /* ************************************ */
     .blog .main-container {
         max-width: initial;
@@ -781,7 +790,7 @@ ul.breadcrum a:hover{
     }
 
     /* ************************************ */
-    /*         POST DESKTOP                */
+    /*          POST DESKTOP                */
     /* ************************************ */
     .post-article-container {        
         grid-template-columns: repeat(4, 1fr); 
